@@ -1,12 +1,17 @@
 import { useTheme } from "@/components/ThemeProvider.tsx";
 import ModeToggle from "@/components/ModeToggle.tsx";
 import { Link } from "react-router-dom";
+import React from "react";
 
-const Header = () => {
+type HeaderProps = {
+  children: React.ReactNode;
+};
+
+const Header: React.FC<HeaderProps> = ({ children }) => {
   const { theme } = useTheme();
 
   return (
-    <header className="flex justify-between items-center p-2">
+    <header className="max-w-[1200px] mx-auto flex justify-between items-center p-2 tracking-wider uppercase">
       <Link to="/">
         {theme === "dark" ? (
           <img src="/logo-dark-mode.png" alt="logo" className="h-10" />
@@ -14,7 +19,8 @@ const Header = () => {
           <img src="/logo-light-mode.png" alt="logo" className="h-10" />
         )}
       </Link>
-      <div>
+      <div className="flex gap-4 items-center">
+        {children}
         <ModeToggle />
       </div>
     </header>

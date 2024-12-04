@@ -1,23 +1,6 @@
 import GameCard from "@/components/GameCard.tsx";
 import { Link } from "react-router-dom";
-
-const EXAMPLE_GAMES = [
-  {
-    id: 1,
-    name: "Prehistoric",
-    url: "https://i.redd.it/1ns8umzqrus21.png",
-  },
-  {
-    id: 2,
-    name: "Overload",
-    url: "https://i.redd.it/g115r1wy1yd61.png",
-  },
-  {
-    id: 3,
-    name: "Polandland",
-    url: "https://i.redd.it/0bpr4ujh2sb41.png",
-  },
-];
+import EXAMPLE_GAMES from "@/exampleData.ts";
 
 function GameSelect() {
   return (

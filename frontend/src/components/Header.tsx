@@ -8,7 +8,7 @@ type HeaderProps = {
 
 const Header: React.FC<HeaderProps> = ({ children }) => {
   return (
-    <header className="max-w-[1200px] mx-auto flex justify-between items-center p-2 tracking-wider uppercase">
+    <header className="max-w-[1600px] mx-auto flex justify-between items-center p-2 tracking-wider uppercase">
       <Link to="/">
         <h1 className="font-bold">
           Who's <span className="text-primary">There?</span>

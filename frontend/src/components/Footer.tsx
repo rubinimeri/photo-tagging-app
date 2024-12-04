@@ -1,18 +1,13 @@
-import { useTheme } from "@/components/ThemeProvider.js";
 import { Link } from "react-router-dom";
 import { Github } from "lucide-react";
 
 const Footer = () => {
-  const { theme } = useTheme();
-
   return (
     <footer className="max-w-[1200px] mx-auto flex justify-between items-center p-2">
       <Link to="/">
-        {theme === "dark" ? (
-          <img src="/logo-dark-mode.png" alt="logo" className="h-10" />
-        ) : (
-          <img src="/logo-light-mode.png" alt="logo" className="h-10" />
-        )}
+        <h1 className="font-bold tracking-wider uppercase">
+          Who's <span className="text-primary">There?</span>
+        </h1>
       </Link>
       <div className="flex items-center gap-2">
         <a href="https://github.com/rubinimeri" target="_blank">

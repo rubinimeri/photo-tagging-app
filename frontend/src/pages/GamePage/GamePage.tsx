@@ -1,6 +1,7 @@
 import Header from "@/components/Header.tsx";
 import CharacterAvatar from "@/pages/GamePage/CharacterAvatar.tsx";
 import Game from "@/pages/GamePage/Game.tsx";
+import Footer from "@/components/Footer.tsx";
 
 const EXAMPLE_CHARACTERS = [
   {
@@ -35,6 +36,7 @@ function GamePage() {
         </div>
       </Header>
       <Game />
+      <Footer />
     </>
   );
 }

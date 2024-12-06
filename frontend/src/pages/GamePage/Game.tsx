@@ -1,5 +1,6 @@
 import EXAMPLE_GAMES from "@/exampleData.ts";
 import { useParams } from "react-router-dom";
+import TargetingBox from "@/pages/GamePage/TargetingBox.tsx";
 
 function Game() {
   const { name } = useParams();
@@ -7,6 +8,7 @@ function Game() {
 
   return (
     <main className="">
+      <TargetingBox />
       <img src={game.url} alt="" />
     </main>
   );

@@ -18,7 +18,7 @@ const EXAMPLE_CHARACTERS = [
   },
 ];
 
-interface Target {
+/*interface Target {
   id: number;
   url: string;
   name: string;
@@ -26,29 +26,30 @@ interface Target {
 
 type TargetingBoxProps = {
   targets: Target[];
-};
+};*/
 
-function Crosshair() {
+export function Crosshair({ x, y }: { x: number | null; y: number | null }) {
   return (
-    <div className="rounded-full bg-black bg-opacity-20 border-2 border-primary p-4 w-min flex items-center justify-center">
+    <div
+      style={{
+        transform: `translate(${x}px,${y}px)`,
+      }}
+      className="rounded-full bg-black bg-opacity-20 border-2 border-primary p-4 w-min flex items-center justify-center"
+    >
       <div className="rounded-full p-[4px] bg-primary" />
     </div>
   );
 }
 
-function TargetingBox({ targets }: TargetingBoxProps) {
+function TargetingBox({ x, y }: { x: number | null; y: number | null }) {
   return (
-    <div className="flex items-center gap-4 p-4  w-max z-50 absolute left-1/2">
-      <Crosshair />
-      <div className="flex flex-col gap-2 border-2 border-primary p-4 bg-secondary">
-        {EXAMPLE_CHARACTERS.map((target) => (
-          <CharacterAvatar
-            key={target.id}
-            url={target.url}
-            name={target.name}
-          />
-        ))}
-      </div>
+    <div
+      className="flex flex-col gap-2 border-2 border-primary p-4 bg-secondary absolute"
+      style={{ transform: `translate(${x}px,${y}px)` }}
+    >
+      {EXAMPLE_CHARACTERS.map((target) => (
+        <CharacterAvatar key={target.id} url={target.url} name={target.name} />
+      ))}
     </div>
   );
 }

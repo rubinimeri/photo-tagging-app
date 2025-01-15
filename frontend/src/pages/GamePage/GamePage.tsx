@@ -2,24 +2,7 @@ import Header from "@/components/Header.tsx";
 import CharacterAvatar from "@/pages/GamePage/CharacterAvatar.tsx";
 import Game from "@/pages/GamePage/Game.tsx";
 import Footer from "@/components/Footer.tsx";
-
-const EXAMPLE_CHARACTERS = [
-  {
-    id: 1,
-    url: "https://github.com/shadcn.png",
-    name: "Character 1",
-  },
-  {
-    id: 2,
-    url: "https://github.com/shadcn.png",
-    name: "Character 2",
-  },
-  {
-    id: 3,
-    url: "https://github.com/shadcn.png",
-    name: "Character 3",
-  },
-];
+import { EXAMPLE_CHARACTERS } from "@/constants.ts";
 
 function GamePage() {
   return (

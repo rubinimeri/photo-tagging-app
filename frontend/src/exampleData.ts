@@ -1,8 +1,4 @@
-interface Game {
-  id: number;
-  name: string;
-  url: string;
-}
+import { Game } from "@/types.ts";
 
 const EXAMPLE_GAMES: Game[] = [
   {

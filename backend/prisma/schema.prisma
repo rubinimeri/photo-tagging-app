@@ -11,19 +11,24 @@ model Game {
   name    String   @id @unique
   url     String
   objects Object[]
+  players Player[]
 }
 
 model Object {
-  name     String  @id
+  name     String   @id
   url      String
-  x        Int
-  y        Int
-  Game     Game?   @relation(fields: [gameName], references: [name])
+  x        Float
+  y        Float
+  Game     Game?    @relation(fields: [gameName], references: [name])
   gameName String?
+  players  Player[]
 }
 
 model Player {
   name      String   @id
   createdAt DateTime @default(now())
+  objects   Object[]
   score     Float?
+  game      Game?    @relation(fields: [gameName], references: [name])
+  gameName  String?
 }
